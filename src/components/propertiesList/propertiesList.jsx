@@ -29,9 +29,6 @@ import Resize from "../../assets/iconsSvg/resize 1.svg";
 import Love from "../../assets/iconsSvg/love 1.svg";
 
 class PropertiesList extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const item = [
       {

@@ -27,9 +27,7 @@ import {
 } from "./style";
 
 class NewProperty extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+ 
   render() {
     return (
       <>
