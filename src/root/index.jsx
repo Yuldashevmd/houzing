@@ -3,28 +3,25 @@ import Navbar from "../components/navbar/index";
 import NewProperty from "../components/newProperty/newProperty";
 import PropertiesList from "../components/propertiesList/propertiesList";
 import Footer from "../components/footer/index";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Generic from "../generic";
 import Login from "../components/login";
-// import { Pages } from "../utils";
+import ProductView from "../components/propertiesList/Content/ProductView";
+
 
 const Root = () => {
   return (
     <div>
       <BrowserRouter>
         <Navbar />
-        <Switch>
-          {/* {
-            Pages.map((value)=>{
-              <Route  exact path={value.path} key={value.id} component={value.component}/>
-            })
-          } */}
-          <Route exact path="/" component={Generic} />
-          <Route exact path="/home" component={Generic} />
-          <Route exact path="/properties" component={PropertiesList} />
-          <Route exact path="/contacts" component={NewProperty} />
-          <Route exact path="/login" component={Login} />
-        </Switch>
+        <Routes>
+          <Route  path="/" element={<Generic/>} />
+          <Route  path="/home" element={<Generic/>} />
+          <Route  path="/properties" element={<PropertiesList/>} />
+          <Route  path="/properties:id" element={<Generic/>} />
+          <Route  path="/contacts" element={<NewProperty/>} />
+          <Route  path="/login" element={<Login/>} />
+        </Routes>
         <Footer />
       </BrowserRouter>
     </div>

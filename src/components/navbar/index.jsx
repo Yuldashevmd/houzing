@@ -2,8 +2,7 @@ import React from "react";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Container, Nav, Ul } from "./style";
 import Advanced from "./Advanced/index";
-import { Link } from "react-router-dom";
-// import { Pages } from "../../utils";
+import { NavLink } from "react-router-dom";
 
 class Navbar extends React.Component {
   render() {
@@ -11,28 +10,23 @@ class Navbar extends React.Component {
       <>
         <Nav>
           <Container>
-            <Link to="/">
+            <NavLink to="/">
               <Logo />
-            </Link>
+            </NavLink>
             <Ul>
-              {/* {
-                Pages.map(value=>{
-                  <Ul.a key={value.id} to={value.path}>{value.title}</Ul.a>
-                })
-              } */}
-              <Ul.a activeStyle={{ color: "#f9e33b" }} to="/home">
+              <Ul.a  to="/home">
                 Home
               </Ul.a>
-              <Ul.a activeStyle={{ color: "#f9e33b" }} to="/properties">
+              <Ul.a  to="/properties">
                 Properties
               </Ul.a>
-              <Ul.a activeStyle={{ color: "#f9e33b" }} to="/contacts">
+              <Ul.a  to="/contacts">
                 Contacts
               </Ul.a>
             </Ul>
-            <Link to="/login">
+            <NavLink to="/login">
               <button className="loginBtn">Login</button>
-            </Link>
+            </NavLink>
             <button className="hamburBtn">=</button>
           </Container>
         </Nav>

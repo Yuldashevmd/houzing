@@ -100,7 +100,7 @@ export const Block = styled.div `
 export const Img = styled.div `
   width: 381px;
   height: 220px;
-
+  
   /* Media */
   @media only screen and (max-width: 739px) and (min-width: 544px) {
     width: 100%;
@@ -177,6 +177,10 @@ export const TextParagh = styled.div `
   h3 {
     ${color}
     font-size: 16px;
+    cursor: pointer;
+    :hover{
+      opacity: 0.7;
+    }
   }
   p {
     color: #696969;
