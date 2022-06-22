@@ -6,7 +6,6 @@ import Footer from "../components/footer/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Generic from "../generic";
 import Login from "../components/login";
-import ProductView from "../components/propertiesList/Content/ProductView";
 
 
 const Root = () => {
