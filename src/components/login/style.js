@@ -14,7 +14,7 @@ export const Container = styled.div `
 `;
 export const LoginForm = styled.div `
 width: 580px;
-height: 376px;
+min-height: 376px;
 padding: 30px;
 margin: 5rem 0;
 border-radius: 3px;
@@ -28,22 +28,37 @@ p{
   ${color};
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 1rem;
+}
+.btn-regis{
+  border: none;
+  background: transparent;
+  color: blue;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  :hover{
+    text-decoration: underline;
+  }
 }
 `;
 export const Form = styled.div `
-height: 85%;
+height: 90%;
 display: flex;
 flex-direction: column;
 justify-content: space-evenly;
+margin-bottom: 1rem;
 `;
 LoginForm.InputForm = styled.div `
 width: 100%;
 display: flex;
 flex-direction: column;
+margin: 1rem 0;
 label{
   ${color};
   font-size: 14px;
   font-weight: 600;
+  margin-bottom: 5px;
 }
 `;
 export const Input = styled.input `

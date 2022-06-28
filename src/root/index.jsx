@@ -6,13 +6,14 @@ import Footer from "../components/footer/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Generic from "../generic";
 import Login from "../components/login";
+import Register from "../components/login/Register";
 
 
 const Root = () => {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+      <Navbar />
         <Routes>
           <Route  path="/" element={<Generic/>} />
           <Route  path="/home" element={<Generic/>} />
@@ -20,6 +21,7 @@ const Root = () => {
           <Route  path="/properties:id" element={<Generic/>} />
           <Route  path="/contacts" element={<NewProperty/>} />
           <Route  path="/login" element={<Login/>} />
+          <Route  path="/login/register" element={<Register/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

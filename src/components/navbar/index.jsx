@@ -1,7 +1,6 @@
 import React from "react";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Container, Nav, Ul } from "./style";
-import Advanced from "./Advanced/index";
 import { NavLink } from "react-router-dom";
 
 class Navbar extends React.Component {
@@ -30,7 +29,7 @@ class Navbar extends React.Component {
             <button className="hamburBtn">=</button>
           </Container>
         </Nav>
-        <Advanced />
+        
       </>
     );
   }

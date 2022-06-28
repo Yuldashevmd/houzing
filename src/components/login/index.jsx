@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../navbar';
 import { Button, CheckForget, Container, Form, Input, LoginForm } from './style';
 
 const Login = () => {
+  const navigate =useNavigate();
   return (
     <Container>
       <LoginForm>
@@ -23,6 +26,7 @@ const Login = () => {
         </CheckForget>
         <Button>Login</Button>
         </Form>
+      <button className='btn-regis' onClick={()=>navigate('/login/register')}>Register</button>
       </LoginForm>
     </Container>
   );

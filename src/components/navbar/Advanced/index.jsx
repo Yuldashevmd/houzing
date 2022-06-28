@@ -11,7 +11,7 @@ class Advanced extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: false,
+      checked: 0,
     };
   }
   render() {
