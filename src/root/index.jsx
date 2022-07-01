@@ -9,9 +9,10 @@ import Login from "../components/login";
 import Register from "../components/login/Register";
 
 
+
 const Root = () => {
   return (
-    <div>
+    <>
       <Router>
       <Navbar />
         <Routes>
@@ -25,7 +26,7 @@ const Root = () => {
         </Routes>
         <Footer />
       </Router>
-    </div>
+    </>
   );
 };
 

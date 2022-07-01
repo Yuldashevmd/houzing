@@ -66,7 +66,7 @@ width: 100%;
 height: 40px;
 ${color};
 border: none;
-border-bottom: 2px solid #E6E9EC;
+border-bottom: ${props=>props.valid ? '2px solid #E6E9EC' :'2px solid red'};
 outline: none;
 transition: all 0.2s linear;
 :focus{
@@ -127,3 +127,24 @@ margin-top: 20px;
   transform: scale(0.99);
 }
 `;
+
+export const ResultText = styled.div `
+  width: 100%;
+  padding: 15px 0;
+  background: ${props=>props.color=== 'lightgreen' ? 'lightgreen':'red'};
+  color: #fff;
+  text-align: center;
+  display: ${props=>props.display === 0 ? 'none' : 'block'};
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: helvetica;
+  animation: display 0.9s forwards ;
+  @keyframes display {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+`
