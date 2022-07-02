@@ -3,7 +3,7 @@ import Navbar from "../components/navbar/index";
 import NewProperty from "../components/newProperty/newProperty";
 import PropertiesList from "../components/propertiesList/propertiesList";
 import Footer from "../components/footer/index";
-import {BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Generic from "../generic";
 import Login from "../components/login";
 import Register from "../components/login/Register";
