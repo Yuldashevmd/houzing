@@ -23,11 +23,13 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
-  const Login = localStorage.getItem("login");
-  const Password = localStorage.getItem("password");
+  const userData = JSON.parse(localStorage.getItem("user"));
 
   const onClick = () => {
-    if (value.login === Login && value.password === Password) {
+    if (
+      value?.login === userData?.login &&
+      value?.password === userData?.password
+    ) {
       setTimeout(() => {
         setDisplay(!display);
         setColor("lightgreen");

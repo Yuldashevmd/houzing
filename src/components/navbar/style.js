@@ -12,6 +12,7 @@ export const Container = styled.div `
   margin: auto;
   display: flex;
   align-items: center;
+  position: relative;
   .loginBtn {
     width: 120px;
     height: 44px;
@@ -75,11 +76,51 @@ export const Ul = styled.div `
 `;
 Ul.a = styled(NavLink)
 `
-color:white;
+  color: white;
   opacity: 0.7;
   cursor: pointer;
   :hover {
     opacity: 1;
     transition: all 0.3s ease-out;
+  }
+`;
+
+export const SignedUser = styled.div `
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  img {
+    width: 25px;
+    transition: all 0.2s linear;
+    :hover {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+`;
+export const UlUser = styled.ul `
+  width: 180px;
+  display: ${(props) => (props.display ? "flex" : "none")};
+  border-radius: 8px;
+  box-shadow: 0 0 5px grey;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: lightyellow;
+  z-index: 999;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  li {
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    cursor: pointer;
+    :hover {
+      background: grey;
+      color: #fff;
+    }
   }
 `;

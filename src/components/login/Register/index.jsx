@@ -6,6 +6,12 @@ import { ContextWrap } from "../../Context/index";
 const Register = () => {
   const navigate = useNavigate();
   const [inputVal, setInputVal] = useContext(ContextWrap);
+  const personData = {
+    id: 1,
+    login: inputVal.login,
+    password: inputVal.password,
+    token: Date.now(),
+  };
   const getVal = (e) => {
     setInputVal({
       ...inputVal,
@@ -16,8 +22,7 @@ const Register = () => {
     if (inputVal.login.toString() === "") {
       alert("Fill all empty fields...");
     } else {
-      localStorage.setItem("login", inputVal.login);
-      localStorage.setItem("password", inputVal.password);
+      localStorage.setItem("user", JSON.stringify(personData));
       setTimeout(() => {
         navigate("/login");
       }, 1500);
