@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Container, Nav, SignedUser, Ul, UlUser } from "./style";
 import { useNavigate } from "react-router-dom";
 import userSvg from "../../assets/Login.svg";
+import { ContextWrap } from "../Context";
 
 const Navbar = () => {
   const [display, setDisplay] = useState(false);
   const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem("user"));
+  const [btnValue, setBtnValue] = useContext(ContextWrap);
+
   const signOut = () => {
     localStorage.clear("user");
     navigate("/home");
@@ -22,7 +25,7 @@ const Navbar = () => {
             <Ul.a to="/properties">Properties</Ul.a>
             <Ul.a to="/contacts">Contacts</Ul.a>
           </Ul>
-          {userData?.token ? (
+          {!btnValue && userData?.token ? (
             <>
               <SignedUser>
                 <img
@@ -43,7 +46,6 @@ const Navbar = () => {
               Login
             </button>
           )}
-
           <button className="hamburBtn">=</button>
         </Container>
       </Nav>
@@ -52,3 +54,25 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// {userData?.token ? (
+//   <>
+//    <SignedUser>
+//      <img
+//        onClick={() => setDisplay(!display)}
+//        src={userSvg}
+//        alt="1"
+//      />
+//    </SignedUser>
+//    <UlUser display={display}>
+//      <li>My Account</li>
+//      <li>Basket</li>
+//      <li>Setting</li>
+//      <li onClick={signOut}>Sign out</li>
+//    </UlUser>
+//  </>
+// ) : (
+//  <button onClick={() => navigate("/login")} className="loginBtn">
+//    Login
+//  </button>
+// )}

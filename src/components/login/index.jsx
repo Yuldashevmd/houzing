@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { memo, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { ContextWrap } from "../Context";
 import {
   Button,
   CheckForget,
@@ -16,6 +18,7 @@ const Login = () => {
   const [textRes, setTextRes] = useState();
   const [display, setDisplay] = useState(0);
   const [color, setColor] = useState("");
+  const [btnValue, setBtnValue] = useContext(ContextWrap);
 
   const setVal = (e) => {
     setValue({
@@ -36,6 +39,7 @@ const Login = () => {
         setTextRes("Success...");
       }, 500);
       setTimeout(() => {
+        setBtnValue(!btnValue);
         navigate("/home");
       }, 2000);
     } else {
@@ -96,4 +100,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default memo(Login);

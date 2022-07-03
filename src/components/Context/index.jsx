@@ -6,8 +6,12 @@ export const ContextWrap =createContext();
 
 const Context = ({children}) => {
   const [data,setData]=useState(person);
+  const [btnValue, setBtnValue] = useState(false);
   return (
-    <ContextWrap.Provider value={[data,setData]}>
+    <ContextWrap.Provider value={[
+      data,setData,
+      btnValue,
+      setBtnValue]}>
       {children}
     </ContextWrap.Provider>
   );

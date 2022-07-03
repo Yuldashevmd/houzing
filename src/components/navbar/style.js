@@ -98,6 +98,7 @@ export const SignedUser = styled.div `
       opacity: 0.7;
     }
   }
+
 `;
 export const UlUser = styled.ul `
   width: 180px;
@@ -106,11 +107,20 @@ export const UlUser = styled.ul `
   box-shadow: 0 0 5px grey;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: lightyellow;
+  background-color: lightgrey;
   z-index: 999;
   position: absolute;
   top: 3rem;
   right: 0;
+  animation: show 0.4s ease-in-out;
+  @keyframes show {
+    0%{
+     opacity: 0;
+    }
+    100%{
+     opacity: 1;
+    }
+  }
   li {
     border-bottom: 1px solid lightgray;
     display: flex;
@@ -119,7 +129,7 @@ export const UlUser = styled.ul `
     padding: 10px 0;
     cursor: pointer;
     :hover {
-      background: grey;
+      background: lightskyblue;
       color: #fff;
     }
   }
