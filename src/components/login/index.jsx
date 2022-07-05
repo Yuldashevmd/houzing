@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useState } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ContextWrap } from "../Context";

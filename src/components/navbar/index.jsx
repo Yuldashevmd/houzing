@@ -9,7 +9,7 @@ const Navbar = () => {
   const [display, setDisplay] = useState(false);
   const navigate = useNavigate();
   const userData = JSON.parse(localStorage.getItem("user"));
-  const [btnValue, setBtnValue] = useContext(ContextWrap);
+  const [btnValue] = useContext(ContextWrap);
 
   const signOut = () => {
     localStorage.clear("user");
