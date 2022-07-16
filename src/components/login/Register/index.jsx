@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Form, Input, LoginForm } from "../style";
-import { ContextWrap } from "../../Context/index";
+import { ContextWrap } from "../../../Context";
 
 const Register = () => {
   const navigate = useNavigate();

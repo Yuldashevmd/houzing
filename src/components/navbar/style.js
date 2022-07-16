@@ -11,6 +11,7 @@ export const Container = styled.div `
   height: 100%;
   margin: auto;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   .loginBtn {
@@ -62,14 +63,19 @@ export const Container = styled.div `
     justify-content: space-evenly;
   }
 `;
-export const Ul = styled.div `
+export const LinkWrap = styled.div `
   width: 38%;
+  display: flex;
+`;
+export const Ul = styled.div `
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
   color: #fff;
   font-size: 14px;
   letter-spacing: 2px;
+  .active {
+    color: #0061df;
+  }
   @media screen and (max-width: 543px) {
     display: none;
   }
@@ -98,7 +104,6 @@ export const SignedUser = styled.div `
       opacity: 0.7;
     }
   }
-
 `;
 export const UlUser = styled.ul `
   width: 180px;
@@ -114,11 +119,11 @@ export const UlUser = styled.ul `
   right: 0;
   animation: show 0.4s ease-in-out;
   @keyframes show {
-    0%{
-     opacity: 0;
+    0% {
+      opacity: 0;
     }
-    100%{
-     opacity: 1;
+    100% {
+      opacity: 1;
     }
   }
   li {

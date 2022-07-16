@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
+import { Wrapper } from "../../../Home/style";
+import { Container } from "../../../Navbar/style";
 
 const ProductView = () => {
   return (
-    <div>
-      <h1>Item</h1>
-    </div>
+    <Container>
+      <Wrapper>
+        <h1>Item</h1>
+      </Wrapper>
+    </Container>
   );
 };
 

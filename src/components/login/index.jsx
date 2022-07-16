@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContextWrap } from "../Context";
+import { ContextWrap } from "../../Context";
 import {
   Button,
   CheckForget,

@@ -1,9 +1,12 @@
 import React, { useContext, useState } from "react";
-import { ReactComponent as Logo } from "../../assets/logo.svg";
-import { Container, Nav, SignedUser, Ul, UlUser } from "./style";
-import { useNavigate } from "react-router-dom";
+import Logo from "../../assets/logo.svg";
+import { Container, LinkWrap, Nav, SignedUser, Ul, UlUser } from "./style";
+import { Outlet, useNavigate } from "react-router-dom";
 import userSvg from "../../assets/Login.svg";
-import { ContextWrap } from "../Context";
+import { ContextWrap } from "../../Context";
+import { navbar } from "../../utils/Navbar";
+import Advanced from "./Advanced";
+import { user } from "../../utils/user";
 
 const Navbar = () => {
   const [display, setDisplay] = useState(false);
@@ -15,16 +18,23 @@ const Navbar = () => {
     localStorage.clear("user");
     navigate("/home");
   };
+
   return (
     <>
       <Nav>
         <Container>
-          <Logo onClick={() => navigate("/")} />
-          <Ul>
-            <Ul.a to="/home">Home</Ul.a>
-            <Ul.a to="/properties">Properties</Ul.a>
-            <Ul.a to="/contacts">Contacts</Ul.a>
-          </Ul>
+          <img
+            style={{ cursor: "pointer" }}
+            src={Logo}
+            onClick={() => navigate("/")}
+          />
+          <LinkWrap>
+            {navbar?.map((item) => (
+              <Ul key={item.id}>
+                <Ul.a to={item.path}>{item.title}</Ul.a>
+              </Ul>
+            ))}
+          </LinkWrap>
           {!btnValue && userData?.token ? (
             <>
               <SignedUser>
@@ -35,10 +45,11 @@ const Navbar = () => {
                 />
               </SignedUser>
               <UlUser display={display}>
-                <li>My Account</li>
-                <li>Basket</li>
-                <li>Setting</li>
-                <li onClick={signOut}>Sign out</li>
+                {user.map((item) => (
+                  <div key={item.id}>
+                    <li onClick={() => navigate(item.path)}>{item?.title}</li>
+                  </div>
+                ))}
               </UlUser>
             </>
           ) : (
@@ -49,30 +60,10 @@ const Navbar = () => {
           <button className="hamburBtn">=</button>
         </Container>
       </Nav>
+      <Advanced />
+      <Outlet />
     </>
   );
 };
 
 export default Navbar;
-
-// {userData?.token ? (
-//   <>
-//    <SignedUser>
-//      <img
-//        onClick={() => setDisplay(!display)}
-//        src={userSvg}
-//        alt="1"
-//      />
-//    </SignedUser>
-//    <UlUser display={display}>
-//      <li>My Account</li>
-//      <li>Basket</li>
-//      <li>Setting</li>
-//      <li onClick={signOut}>Sign out</li>
-//    </UlUser>
-//  </>
-// ) : (
-//  <button onClick={() => navigate("/login")} className="loginBtn">
-//    Login
-//  </button>
-// )}

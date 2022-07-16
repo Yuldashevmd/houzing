@@ -1,28 +1,41 @@
 import React from "react";
-import Navbar from "../components/navbar/index";
-import NewProperty from "../components/newProperty/newProperty";
-import PropertiesList from "../components/propertiesList/propertiesList";
-import Footer from "../components/footer/index";
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Generic from "../generic";
-import Login from "../components/login";
+import Navbar from "../components/Navbar/index";
+import Footer from "../components/Footer";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { navbar } from "../utils/Navbar";
+import ErrorPage from "../page/Error";
 import Register from "../components/login/Register";
-
-
+import Login from "../components/login";
+import ProductView from "../components/propertiesList/Content/ProductView";
+import NewProperty from "../components/newProperty/newProperty";
+import Favourite from "../components/Favourite";
+import { user } from "../utils/user";
 
 const Root = () => {
   return (
     <>
       <Router>
-      <Navbar />
         <Routes>
-          <Route  path="/" element={<Generic/>} />
-          <Route  path="/home" element={<Generic/>} />
-          <Route  path="/properties" element={<PropertiesList/>} />
-          <Route  path="/properties:id" element={<Generic/>} />
-          <Route  path="/contacts" element={<NewProperty/>} />
-          <Route  path="/login" element={<Login/>} />
-          <Route  path="/login/register" element={<Register/>} />
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="*" element={<ErrorPage />} />
+          <Route element={<Navbar />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/login/register" element={<Register />} />
+            <Route path="/properties:id" element={<ProductView />} />
+            <Route path="/addpost" element={<NewProperty />} />
+            <Route path="/favourite" element={<Favourite />} />
+            {navbar?.map((item) => (
+              <Route key={item.id} path={item?.path} element={item?.element} />
+            ))}
+            {user?.map((item) => (
+              <Route path={item?.path} element={item?.element} />
+            ))}
+          </Route>
         </Routes>
         <Footer />
       </Router>

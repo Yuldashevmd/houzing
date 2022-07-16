@@ -1,8 +1,15 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     list-style: none;
-     text-decoration: none;
-     font-family: verdana;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: verdana;
+}
+
+:root {
+    --bgColor: #0d263b;
+    --btnColor: #0061df;
+    --pColor: #696969;
+    --textColor: #0d263b;
+}
