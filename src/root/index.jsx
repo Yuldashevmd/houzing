@@ -13,7 +13,7 @@ import Register from "../components/login/register";
 import Login from "../components/login";
 import ProductView from "../components/propertiesList/Content/ProductView";
 import NewProperty from "../components/newProperty/newProperty";
-import Favourite from "../components/favourite";
+import Favourite from "../components/favourite/index";
 import { user } from "../utils/user";
 
 const Root = () => {
