@@ -14,11 +14,6 @@ const Navbar = () => {
   const userData = JSON.parse(localStorage.getItem("user"));
   const [btnValue] = useContext(ContextWrap);
 
-  const signOut = () => {
-    localStorage.clear("user");
-    navigate("/home");
-  };
-
   return (
     <>
       <Nav>
@@ -27,6 +22,7 @@ const Navbar = () => {
             style={{ cursor: "pointer" }}
             src={Logo}
             onClick={() => navigate("/")}
+            alt="img"
           />
           <LinkWrap>
             {navbar?.map((item) => (
