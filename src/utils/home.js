@@ -1,6 +1,4 @@
 import bgImg from "../assets/imgbg/bg.svg";
-import bgImg2 from "../assets/imgbg/photoItem.png";
-import bgImg3 from "../assets/imgbg/photoItem2.png";
 
 export const home = [{
     id: 1,
