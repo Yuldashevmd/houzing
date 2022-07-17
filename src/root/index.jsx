@@ -9,11 +9,11 @@ import {
 } from "react-router-dom";
 import { navbar } from "../utils/Navbar";
 import ErrorPage from "../page/Error";
-import Register from "../components/login/Register";
+import Register from "../components/login/register";
 import Login from "../components/login";
 import ProductView from "../components/propertiesList/Content/ProductView";
 import NewProperty from "../components/newProperty/newProperty";
-import Favourite from "../components/Favourite";
+import Favourite from "../components/favourite";
 import { user } from "../utils/user";
 
 const Root = () => {

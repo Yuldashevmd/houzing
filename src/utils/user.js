@@ -2,30 +2,20 @@ import Generic from "../page/Generic";
 
 export const user = [{
         id: 1,
-        title: "My Account",
-        path: "/account",
+        title: "My profile",
+        path: "/profile",
         element: < Generic / > ,
     },
     {
         id: 2,
-        title: "My Favourite",
-        path: "/favourite",
+        title: "My Properties",
+        path: "/myproperties",
         element: < Generic / > ,
     },
     {
         id: 3,
-        title: "Add Post",
-        path: "/addpost",
+        title: "Favourites",
+        path: "/favourite",
         element: < Generic / > ,
-    },
-    {
-        id: 4,
-        title: "Setting",
-        path: "/setting",
-        element: < Generic / > ,
-    },
-    {
-        id: 5,
-        title: "Sign Out",
     },
 ];

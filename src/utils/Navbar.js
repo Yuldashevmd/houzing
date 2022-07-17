@@ -1,6 +1,6 @@
 import Generic from "../page/Generic";
 import PropertiesList from "../components/propertiesList/propertiesList";
-import Home from "../components/Home";
+import Home from "../components/home";
 
 export const navbar = [{
         id: 1,

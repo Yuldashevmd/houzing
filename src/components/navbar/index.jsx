@@ -5,7 +5,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import userSvg from "../../assets/Login.svg";
 import { ContextWrap } from "../../Context";
 import { navbar } from "../../utils/Navbar";
-import Advanced from "./Advanced";
+import Advanced from "./advanced";
 import { user } from "../../utils/user";
 
 const Navbar = () => {
