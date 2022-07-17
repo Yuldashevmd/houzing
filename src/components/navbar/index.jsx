@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Logo from "../../assets/logo.svg";
-import { Container, LinkWrap, Nav, SignedUser, Ul, UlUser } from "style";
+import { Container, LinkWrap, Nav, SignedUser, Ul, UlUser } from "./style";
 import { Outlet, useNavigate } from "react-router-dom";
 import userSvg from "../../assets/Login.svg";
 import { ContextWrap } from "../../Context";
