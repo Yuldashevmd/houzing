@@ -37,8 +37,8 @@ const Root = () => {
             ))}
           </Route>
         </Routes>
-        <Footer />
       </Router>
+      <Footer />
     </>
   );
 };
