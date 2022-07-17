@@ -21,9 +21,9 @@ const Root = () => {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="*" element={<ErrorPage />} />
           <Route element={<Navbar />}>
+            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/login/register" element={<Register />} />
             <Route path="/properties:id" element={<ProductView />} />
@@ -33,7 +33,7 @@ const Root = () => {
               <Route key={item.id} path={item?.path} element={item?.element} />
             ))}
             {user?.map((item) => (
-              <Route path={item?.path} element={item?.element} />
+              <Route key={item.id} path={item?.path} element={item?.element} />
             ))}
           </Route>
         </Routes>
