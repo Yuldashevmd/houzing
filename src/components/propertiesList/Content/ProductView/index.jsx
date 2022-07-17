@@ -1,6 +1,6 @@
 import React from "react";
 import { Wrapper } from "../../../Home/style";
-import { Container } from "../../../Navbar/style";
+import { Container } from "../../../navbar/style";
 
 const ProductView = () => {
   return (

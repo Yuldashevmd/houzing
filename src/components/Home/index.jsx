@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../Navbar/style";
+import { Container } from "../navbar/style";
 import { Wrapper } from "./style";
 
 const Home = () => {
