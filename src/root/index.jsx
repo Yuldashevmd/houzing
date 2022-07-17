@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import { navbar } from "../utils/Navbar";
 import ErrorPage from "../page/Error";
-import Register from "../components/login/register";
+import Register from "../components/login/Register";
 import Login from "../components/login";
 import ProductView from "../components/propertiesList/Content/ProductView";
 import NewProperty from "../components/newProperty/newProperty";
