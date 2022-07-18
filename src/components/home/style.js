@@ -16,7 +16,6 @@ export const Slider = styled.div `
     height: 571px;
     object-fit: cover;
     filter: brightness(30%);
-    margin-top: 0.5rem;
   }
 `;
 

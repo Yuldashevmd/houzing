@@ -5,8 +5,8 @@ import { Outlet, useNavigate } from "react-router-dom";
 import userSvg from "../../assets/Login.svg";
 import { ContextWrap } from "../../Context";
 import { navbar } from "../../utils/Navbar";
-import Advanced from "./advanced";
 import { user } from "../../utils/user";
+import ButtonComp from "./../GenericComp/Button/index";
 
 const Navbar = () => {
   const [display, setDisplay] = useState(false);
@@ -49,14 +49,18 @@ const Navbar = () => {
               </UlUser>
             </>
           ) : (
-            <button onClick={() => navigate("/login")} className="loginBtn">
+            <ButtonComp
+              width={"131px"}
+              onClick={() => navigate("/login")}
+              className="loginBtn"
+            >
               Login
-            </button>
+            </ButtonComp>
           )}
           <button className="hamburBtn">=</button>
         </Container>
       </Nav>
-      <Advanced />
+
       <Outlet />
     </>
   );

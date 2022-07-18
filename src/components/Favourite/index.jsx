@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper } from "../home/style";
+import { Wrapper } from "../Home/style";
 import { Container } from "../navbar/style";
 
 const Favourite = () => {

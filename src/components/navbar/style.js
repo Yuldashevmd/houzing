@@ -14,27 +14,7 @@ export const Container = styled.div `
   justify-content: space-between;
   align-items: center;
   position: relative;
-  .loginBtn {
-    width: 120px;
-    height: 44px;
-    padding: 12px 40px;
-    border: 1px solid #ffffff;
-    color: #fff;
-    border-radius: 2px;
-    background: transparent;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: all 0.3s linear;
-    @media screen and (max-width: 370px) {
-      display: none;
-    }
-    :hover {
-      opacity: 1;
-    }
-    :active {
-      transform: scale(0.95);
-    }
-  }
+
   .hamburBtn {
     display: none;
     /* media */
