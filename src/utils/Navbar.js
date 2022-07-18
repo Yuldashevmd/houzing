@@ -1,12 +1,12 @@
 import Generic from "../page/Generic";
 import PropertiesList from "../components/propertiesList/propertiesList";
-import Home from "../components/home";
+import HomePage from "../page/Home";
 
 export const navbar = [{
         id: 1,
         title: "Home",
         path: "/home",
-        element: < Home / > ,
+        element: < HomePage / > ,
     },
     {
         id: 2,
