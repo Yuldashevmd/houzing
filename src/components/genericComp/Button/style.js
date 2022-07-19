@@ -12,7 +12,11 @@ const getType = (type) => {
                 border: "none",
                 color: "#fff",
             };
-
+        case "filter":
+            return {
+                border: "1px  solid #0D263B",
+                color: "#0D263B",
+            };
         default:
             return { color: "#fff", border: "1px solid #e6e9ec" };
     }
@@ -36,7 +40,7 @@ export const Button = styled.div `
   transition: all 0.2s linear;
   ${({ type }) => getType(type)};
   :active {
-    transform: scale(0.98);
+    transform: scale(0.97);
   }
   :hover {
     opacity: 0.9;

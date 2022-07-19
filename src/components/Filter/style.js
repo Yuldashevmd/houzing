@@ -12,3 +12,28 @@ export const Container = styled.div `
     outline: none;
   }
 `;
+export const Wrapper = styled.div `
+  display: flex;
+  flex-direction: column;
+`;
+export const Fragment = styled.div `
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px;
+`;
+export const BtnBlock = styled.div `
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  border-top: 1px solid #e6e6e6;
+  padding: 20px 0;
+`;
+export const Title = styled.div `
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #0d263b;
+  margin-bottom: 10px;
+`;

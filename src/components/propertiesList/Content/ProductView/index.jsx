@@ -1,5 +1,5 @@
 import React from "react";
-import { Wrapper } from "../../../Home/style";
+import { Wrapper } from "../../../home/style";
 import { Container } from "../../../navbar/style";
 
 const ProductView = () => {

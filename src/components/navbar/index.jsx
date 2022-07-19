@@ -6,7 +6,7 @@ import userSvg from "../../assets/Login.svg";
 import { ContextWrap } from "../../Context";
 import { navbar } from "../../utils/Navbar";
 import { user } from "../../utils/user";
-import ButtonComp from "./../GenericComp/Button/index";
+import ButtonComp from "./../genericComp/Button/index";
 
 const Navbar = () => {
   const [display, setDisplay] = useState(false);
