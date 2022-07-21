@@ -11,9 +11,9 @@ import { navbar } from "../utils/Navbar";
 import ErrorPage from "../page/Error";
 import Register from "../components/login/Register";
 import Login from "../components/login";
-import ProductView from "../components/propertiesList/Content/ProductView";
+import ProductViewPage from "../components/propertiesList/ProductView";
 import NewProperty from "../components/newProperty/newProperty";
-import Favourite from "../components/Favourite";
+import FavouritePage from "../components/Favourite";
 import { user } from "../utils/user";
 
 const Root = () => {
@@ -26,14 +26,14 @@ const Root = () => {
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/login/register" element={<Register />} />
-            <Route path="/properties:id" element={<ProductView />} />
+            <Route path="/properties:id" element={<ProductViewPage />} />
             <Route path="/addpost" element={<NewProperty />} />
-            <Route path="/favourite" element={<Favourite />} />
+            <Route path="/favourite" element={<FavouritePage />} />
             {navbar?.map((item) => (
-              <Route key={item.id} path={item?.path} element={item?.element} />
+              <Route key={item?.id} path={item?.path} element={item?.element} />
             ))}
             {user?.map((item) => (
-              <Route key={item.id} path={item?.path} element={item?.element} />
+              <Route key={item?.id} path={item?.path} element={item?.element} />
             ))}
           </Route>
         </Routes>

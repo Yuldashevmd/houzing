@@ -1,15 +1,12 @@
 import React from "react";
-import { Wrapper } from "../home/style";
-import { Container } from "../navbar/style";
+import { Container } from "./style";
 
-const Favourite = () => {
+const FavouritePage = () => {
   return (
     <Container>
-      <Wrapper>
-        <h1>This is favourite page</h1>
-      </Wrapper>
+      <h1>This is favourite page</h1>
     </Container>
   );
 };
 
-export default Favourite;
+export default FavouritePage;

@@ -1,26 +1,43 @@
-import React from 'react';
-import { data } from './mock-item';
-import { Block, BlockSale, BlockText, Button, Content, Icon, Img, TextFooter, TextIcons, TextParagh } from '../style';
+import React from "react";
+import {
+  Block,
+  BlockSale,
+  BlockText,
+  Button,
+  Icon,
+  Img,
+  TextFooter,
+  TextIcons,
+  TextParagh,
+} from "./style";
 import Beds from "../../../assets/iconsSvg/bed.svg";
 import Bath from "../../../assets/iconsSvg/bath.svg";
 import Car from "../../../assets/iconsSvg/car.svg";
 import Ruler from "../../../assets/iconsSvg/ruler.svg";
 import Resize from "../../../assets/iconsSvg/resize 1.svg";
 import Love from "../../../assets/iconsSvg/love 1.svg";
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-
-const ContentDiv = () => {
-  const [item]=useState(data);
-  const navigate =useNavigate();
+const CardDiv = ({
+  id,
+  img,
+  personImg,
+  title,
+  paragh,
+  oldPrice,
+  price,
+  beds,
+  bath,
+  car,
+  ruler,
+}) => {
+  const navigate = useNavigate();
 
   return (
-    <Content>
-    {item.map((value) => (
-      <Block key={value.id}>
+    <div>
+      <Block>
         <Img>
-          <img src={value.img} alt="img" />
+          <img src={img} alt="img" />
         </Img>
         <BlockSale>
           <div className="sale__btn">
@@ -28,40 +45,42 @@ const ContentDiv = () => {
             <Button color="grey">FOR SALE</Button>
           </div>
           <div className="sale__img">
-            <img src={value.personImg} alt="" />
+            <img src={personImg} alt="img" />
           </div>
         </BlockSale>
         <BlockText>
           <TextParagh>
-            <h3 onClick={()=>navigate(`/properties:${value.id}`)}>{value.title}</h3>
-            <p>{value.paragh}</p>
+            <h3 onClick={() => navigate(`/properties:${id}`)}>
+              {title || "Title"}
+            </h3>
+            <p>{paragh || "Paragh"}</p>
           </TextParagh>
           <TextIcons>
             <Icon>
               <img src={Beds} alt="beds" />
-              <span>4 Beds</span>
+              <span>{beds || 0}Beds</span>
             </Icon>
             <Icon>
               <img src={Bath} alt="bath" />
-              <span>5 Baths</span>
+              <span>{bath || 0}Baths</span>
             </Icon>
             <Icon>
               <img src={Car} alt="car" />
-              <span>1 Garage</span>
+              <span>{car || 0}Garage</span>
             </Icon>
             <Icon>
               <img src={Ruler} alt="ruler" />
-              <span>1200 Sq Ft</span>
+              <span>{ruler || 0} Sq Ft</span>
             </Icon>
           </TextIcons>
           <hr style={{ opacity: "0.4", background: "grey" }} />
           <TextFooter>
             <div className="footer__price">
               <p style={{ textDecoration: "line-through" }}>
-                {value.oldPrice}
+                {oldPrice || "$0.00"}
               </p>
               <span style={{ color: "#0D263B", fontWeight: "bold" }}>
-                {value.price}
+                {price || "$0.00"}
               </span>
             </div>
             <div className="footer__i">
@@ -71,9 +90,8 @@ const ContentDiv = () => {
           </TextFooter>
         </BlockText>
       </Block>
-    ))}
-  </Content>
+    </div>
   );
 };
 
-export default ContentDiv;
+export default CardDiv;

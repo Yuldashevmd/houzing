@@ -1,6 +1,4 @@
 import bgImg from "../assets/imgbg/bg.svg";
-import bgImg1 from "../assets/imgbg/photoItem.png";
-import bgImg2 from "../assets/imgbg/photoItem2.png";
 
 export const home = [{
         id: 1,
@@ -15,7 +13,7 @@ export const home = [{
     },
     {
         id: 2,
-        bgImg: bgImg1,
+        bgImg: bgImg,
         title: "Skyper Pool",
         p: "112 Glenwood Ave Hyde Park, Boston, MA",
         bed: "8 beds",
@@ -26,7 +24,7 @@ export const home = [{
     },
     {
         id: 3,
-        bgImg: bgImg2,
+        bgImg: bgImg,
         title: "Skyper House Partment",
         p: "112 Glenwood Ave Hyde Park, Boston, MA",
         bed: "2 beds",

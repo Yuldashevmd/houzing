@@ -1,11 +1,12 @@
 import React from "react";
-import FilterPage from "../Filter";
 import CarouselPage from "./Carousel";
+import Recommend from "./Recommend";
+
 const Home = () => {
   return (
     <>
-      <FilterPage />
       <CarouselPage />
+      <Recommend />
     </>
   );
 };

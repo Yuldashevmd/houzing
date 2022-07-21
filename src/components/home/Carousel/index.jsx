@@ -1,30 +1,30 @@
-import React from "react";
-import { Container } from "./style";
+import React, { useRef } from "react";
+import { ArrowBtn, Arrows, Container, Content, Wrap } from "./style";
 import { Carousel } from "antd";
 import { home } from "../../../utils/home";
 
 const CarouselPage = () => {
-  const contentStyle = {
-    width: "100%",
-    height: "571px",
-    color: "#fff",
-    lineHeight: "160px",
-    textAlign: "center",
-    background: "#364d79",
-    objectFit: "cover",
-  };
-  const onChange = (currentSlide) => {
-    console.log(currentSlide);
-  };
+  const slider = useRef();
+
   return (
     <Container>
-      <Carousel autoplay={true} afterChange={onChange}>
+      <Carousel ref={slider}>
         {home?.map((item) => (
-          <div>
-            <img src={item?.bgImg} alt="img" style={contentStyle} />
-          </div>
+          <Content key={item?.id}>
+            <Wrap style={{ background: `url(${item?.bgImg})` }}>
+              <h1>{item?.title}</h1>
+            </Wrap>
+          </Content>
         ))}
       </Carousel>
+      <Arrows>
+        <ArrowBtn className="left" onClick={() => slider?.current?.prev()}>
+          {"<"}
+        </ArrowBtn>
+        <ArrowBtn className="right" onClick={() => slider?.current?.next()}>
+          {">"}
+        </ArrowBtn>
+      </Arrows>
     </Container>
   );
 };

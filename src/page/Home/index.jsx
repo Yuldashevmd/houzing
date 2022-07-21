@@ -1,10 +1,12 @@
 import React from "react";
-import Home from "../../components/home";
+import FilterPage from "../../components/Filter";
+import Home from "../../components/home/index";
 
 const HomePage = () => {
   return (
     <>
-      <Home></Home>
+      <FilterPage />
+      <Home />
     </>
   );
 };
