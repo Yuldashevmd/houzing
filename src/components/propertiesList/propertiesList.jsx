@@ -8,10 +8,22 @@ import {
   Sort,
 } from "./style";
 import CardDiv from "../genericComp/Card";
-import { data } from "../genericComp/Card/mock-item";
+import { useQuery } from "react-query";
 
 const PropertiesList = () => {
-  const [dataItem] = useState(data);
+  const [dataItem, setDataItem] = useState();
+  useQuery(
+    "",
+    () => {
+      return fetch("https://houzing-app.herokuapp.com/api/v1/houses/list").then(
+        (res) => res.json()
+      );
+    },
+    {
+      onSuccess: (res) => setDataItem(res?.data),
+      onError: (err) => console.log(err),
+    }
+  );
   return (
     <Properties>
       <HeaderText>
@@ -31,17 +43,7 @@ const PropertiesList = () => {
       </Sort>
       <CardWrap>
         {dataItem?.map((item) => (
-          <CardDiv
-            key={item?.id}
-            className="cardDiv"
-            id={item?.id}
-            img={item?.img}
-            personImg={item?.personImg}
-            title={item?.title}
-            paragh={item?.paragh}
-            oldPrice={item?.oldPrice}
-            price={item?.price}
-          />
+          <CardDiv info={item} />
         ))}
       </CardWrap>
       <BtnShowDiv>

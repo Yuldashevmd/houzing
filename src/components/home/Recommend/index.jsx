@@ -1,13 +1,25 @@
 import React from "react";
 import { useState } from "react";
 import CardDiv from "../../genericComp/Card";
-import { data } from "../../genericComp/Card/mock-item";
 import AliceCarousel from "react-alice-carousel";
 import { Container } from "./style";
+import { useQuery } from "react-query";
 
 const Recommend = () => {
-  const [dataItem] = useState(data);
+  const [dataItem, setDataItem] = useState();
 
+  useQuery(
+    "",
+    () => {
+      return fetch("https://houzing-app.herokuapp.com/api/v1/houses/list").then(
+        (res) => res.json()
+      );
+    },
+    {
+      onSuccess: (res) => setDataItem(res?.data),
+      onError: (err) => console.log(err),
+    }
+  );
   return (
     <Container>
       <h1 className="title">Recommended</h1>
@@ -16,20 +28,20 @@ const Recommend = () => {
       </p>
       <AliceCarousel
         className="alice-carousel__prev-btn alice-carousel__next-btn"
-        responsive={true}
+        items={dataItem}
+        responsive={{
+          0: {
+            items: 1,
+          },
+          1024: {
+            items: 3,
+          },
+        }}
       >
         {dataItem?.map((item) => (
-          <CardDiv
-            key={item?.id}
-            className="cardDiv"
-            id={item?.id}
-            img={item?.img}
-            personImg={item?.personImg}
-            title={item?.title}
-            paragh={item?.paragh}
-            oldPrice={item?.oldPrice}
-            price={item?.price}
-          />
+          <div className="center" key={item?.id}>
+            <CardDiv info={item} />
+          </div>
         ))}
       </AliceCarousel>
     </Container>

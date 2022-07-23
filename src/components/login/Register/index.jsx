@@ -1,17 +1,38 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Container, Form, Input, LoginForm } from "../style";
-import { ContextWrap } from "../../../Context";
+import { useQuery } from "react-query";
 
 const Register = () => {
   const navigate = useNavigate();
-  const [inputVal, setInputVal] = useContext(ContextWrap);
-  const personData = {
-    id: 1,
-    login: inputVal.login,
-    password: inputVal.password,
-    token: Date.now(),
-  };
+  const [inputVal, setInputVal] = useState();
+  const [personData, setPersonData] = useState();
+
+  useQuery(
+    [],
+    () =>
+      fetch("https://houzing-app.herokuapp.com/api/public/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          email: personData?.email,
+          firstname: personData?.firstName,
+          lastname: personData?.lastName,
+          password: personData?.password,
+        }),
+      }).then((res) => res.json()),
+    {
+      onSuccess: (res) =>
+        res?.statusCode === 200
+          ? setTimeout(() => {
+              navigate("/login");
+            }, 1500)
+          : null,
+      onError: (err) => console.log(err),
+    }
+  );
   const getVal = (e) => {
     setInputVal({
       ...inputVal,
@@ -19,14 +40,12 @@ const Register = () => {
     });
   };
   const onSubmit = () => {
-    if (inputVal.login.toString() === "") {
-      alert("Fill all empty fields...");
-    } else {
-      localStorage.setItem("user", JSON.stringify(personData));
-      setTimeout(() => {
-        navigate("/login");
-      }, 1500);
-    }
+    return setPersonData({
+      email: inputVal?.email,
+      firstname: inputVal?.firstName,
+      lastname: inputVal?.lastName,
+      password: inputVal?.password,
+    });
   };
 
   return (
@@ -39,7 +58,7 @@ const Register = () => {
               onChange={getVal}
               valid={1}
               type="text"
-              value={inputVal.login}
+              value={inputVal?.login}
               name="login"
               placeholder="Login"
             />
@@ -49,7 +68,7 @@ const Register = () => {
               onChange={getVal}
               valid={1}
               type="text"
-              value={inputVal.firstName}
+              value={inputVal?.firstName}
               name="firstName"
               placeholder="First name"
             />
@@ -59,7 +78,7 @@ const Register = () => {
               onChange={getVal}
               valid={1}
               type="text"
-              value={inputVal.lastName}
+              value={inputVal?.lastName}
               name="lastName"
               placeholder="Last name"
             />
@@ -69,7 +88,7 @@ const Register = () => {
               onChange={getVal}
               valid={1}
               type="email"
-              value={inputVal.email}
+              value={inputVal?.email}
               name="email"
               placeholder="Email"
             />
@@ -79,7 +98,7 @@ const Register = () => {
               onChange={getVal}
               valid={1}
               type="email"
-              value={inputVal.userRole}
+              value={inputVal?.userRole}
               name="userRole"
               placeholder="User role"
             />
@@ -89,7 +108,7 @@ const Register = () => {
               onChange={getVal}
               valid={1}
               type="password"
-              value={inputVal.password}
+              value={inputVal?.password}
               name="password"
               placeholder="Password"
             />
@@ -99,12 +118,12 @@ const Register = () => {
               onChange={getVal}
               valid={1}
               type="password"
-              value={inputVal.prePassword}
+              value={inputVal?.prePassword}
               name="prePassword"
               placeholder="Re-enter password"
             />
           </LoginForm.InputForm>
-          <Button onClick={onSubmit}>Register</Button>
+          <Button onClick={() => onSubmit()}>Register</Button>
         </Form>
         <button className="btn-regis" onClick={() => navigate("/login")}>
           Sign in

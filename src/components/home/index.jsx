@@ -1,5 +1,6 @@
 import React from "react";
 import CarouselPage from "./Carousel";
+import Category from "./Category";
 import Recommend from "./Recommend";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <>
       <CarouselPage />
       <Recommend />
+      <Category />
     </>
   );
 };

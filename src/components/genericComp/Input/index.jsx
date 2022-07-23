@@ -1,9 +1,10 @@
 import React, { forwardRef } from "react";
-import { Input } from "./style";
+import { Input, Wrapper } from "./style";
 
 const InputDiv = forwardRef(
   (
     {
+      children,
       type,
       onChange,
       mr,
@@ -21,22 +22,26 @@ const InputDiv = forwardRef(
     ref
   ) => {
     return (
-      <Input
-        type={type}
-        onChange={onChange}
+      <Wrapper
         mr={mr}
         ml={ml}
         mb={mb}
         mt={mt}
-        value={value}
-        name={name}
-        defaultValue={defaultValue}
-        placeholder={placeholder}
         width={width}
         height={height}
         border={border}
-        ref={ref}
-      />
+      >
+        {children}
+        <Input
+          type={type}
+          onChange={onChange}
+          value={value}
+          name={name}
+          defaultValue={defaultValue}
+          placeholder={placeholder}
+          ref={ref}
+        />
+      </Wrapper>
     );
   }
 );

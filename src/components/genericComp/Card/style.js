@@ -1,15 +1,15 @@
 import styled, { css } from "styled-components";
 
-const flex = css`
+const flex = css `
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-const color = css`
+const color = css `
   color: #0d263b;
 `;
 
-export const Block = styled.div`
+export const Block = styled.div `
   width: 380px;
   height: 429px;
   margin-bottom: 24px;
@@ -25,7 +25,7 @@ export const Block = styled.div`
     width: 100%;
   }
 `;
-export const Img = styled.div`
+export const Img = styled.div `
   width: 381px;
   height: 220px;
   /* Media */
@@ -41,7 +41,7 @@ export const Img = styled.div`
     border-radius: 3px 3px 0 0;
   }
 `;
-export const BlockSale = styled.div`
+export const BlockSale = styled.div `
   width: 320px;
   height: 222px;
   margin: auto;
@@ -75,7 +75,7 @@ export const BlockSale = styled.div`
     justify-content: space-between;
   }
 `;
-export const Button = styled.div`
+export const Button = styled.div `
   width: 73px;
   height: 23px;
   ${flex}
@@ -86,7 +86,7 @@ export const Button = styled.div`
   font-size: 10px;
   cursor: pointer;
 `;
-export const BlockText = styled.div`
+export const BlockText = styled.div `
   width: 100%;
   height: 50%;
   display: flex;
@@ -98,7 +98,7 @@ export const BlockText = styled.div`
     width: 100% !important;
   }
 `;
-export const TextParagh = styled.div`
+export const TextParagh = styled.div `
   width: 90%;
   margin: auto;
   h3 {
@@ -124,14 +124,15 @@ export const TextParagh = styled.div`
     color: #696969;
   }
 `;
-export const TextIcons = styled.div`
+export const TextIcons = styled.div `
   width: 90%;
   margin: 4% auto;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
   text-align: center;
 `;
-export const TextFooter = styled.div`
+export const TextFooter = styled.div `
   width: 90%;
   margin: auto;
   display: flex;
@@ -153,7 +154,7 @@ export const TextFooter = styled.div`
     cursor: pointer;
   }
 `;
-export const Icon = styled.div`
+export const Icon = styled.div `
   ${flex};
   flex-direction: column;
   span {
